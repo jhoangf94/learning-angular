@@ -1,0 +1,93 @@
+<!-- <div class="col-md-8">
+      <h2>{{status}}</h2>
+      <button [disabled]="!listo" (click)="mostrarAlerta()">Click me!</button>
+    
+      <hr>
+    
+      <input type="text" placeholder="Nombres" [(ngModel)]="nombres" />
+      <br>
+      <input type="text" placeholder="Apellidos" [(ngModel)]="apellidos" />
+    
+      <p>
+        Hola {{upercase(nombres)}} {{apellidos}}
+      </p>
+    
+      <hr>
+      <h2>Directivas</h2>
+      <h3>*ngFor</h3>
+    
+      <ul>
+        <li *ngFor="let lugar of lugares">
+          {{ lugar.nombre }}
+        </li>
+      </ul>
+    
+      <h3>*ngIf</h3>
+      <h4>Lugares activos</h4>
+      <ul>
+        <ng-container *ngFor="let lugar of lugares">
+          <li *ngIf="lugar.activo"> {{ lugar.nombre }} : {{ lugar.activo ? "activo" : "inactivo"}} </li>
+        </ng-container>
+      </ul>
+    
+      <h4>Lugares inactivos</h4>
+      <ul>
+        <ng-container *ngFor="let lugar of lugares">
+          <li *ngIf="lugar.activo"> {{ lugar.nombre }} : {{ lugar.activo ? "activo" : "inactivo"}} </li>
+        </ng-container>
+      </ul>
+    
+      <h4>[ngStyle] & [ngClass]</h4>
+    
+      <ul>
+        <ng-container *ngFor="let lugar of lugares; let i = index">
+          <li [ngStyle]="{'color': (lugar.activo ? 'black' : 'red' )}" [ngClass]="{'numero_par': (i + 1) % 2 == 0 }">
+            {{ lugar.nombre }}
+          </li>
+        </ng-container>
+      </ul>
+    
+      <h4>[ngSwitch]</h4>
+    
+      <ul>
+        <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.distancia">
+          <li [ngStyle]="{'color': (lugar.activo ? 'black' : 'red' )}" [ngClass]="{'numero_par': (i + 1) % 2 == 0 }">
+            {{ lugar.nombre }} -
+            <span *ngSwitchCase="1" [ngStyle]="{color: 'blue'}">Muy Cercano </span>
+            <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Cercano</span>
+            <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejano</span>
+          </li>
+        </ng-container>
+      </ul>
+<h2>[resaltar] directiva personalizada</h2 >
+
+
+ <h4>[contar-clicks] HostListener & HostBinding </h4>
+    
+      <ul>
+        <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.distancia">
+          <li contar-clicks [resaltar]="lugar.plan">
+            {{ lugar.nombre }} -
+            <span *ngSwitchCase="1" [ngStyle]="{color: 'blue'}">Muy Cercano </span>
+            <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Cercano</span>
+            <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejano</span>
+          </li>
+        </ng-container>
+      </ul>
+     -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h4>Lugares</h4>
+      <a routerLink="/nuevo-lugar" class="btn btn-primary">Nuevo Lugar</a><br />
+      <ul class="list-group">
+        <a *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" [queryParams]="{action: 'view'}">
+          <li class="list-group-item">
+            {{ lugar.nombre }}
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>

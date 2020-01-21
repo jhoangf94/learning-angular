@@ -1,0 +1,44 @@
+<div class="container">
+
+    <nav aria-label="breadcrumb .bg-gradient-dark">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/lugares">Lugares</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Crear Lugar</li>
+        </ol>
+    </nav>
+
+
+    <div class="col-md-8 mx-auto" style="min-height: 600px;">
+        <h1>Nuevo Lugar</h1>
+        <hr>
+
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" placeholder="Ingresa tu nombre" class="form-control"
+                [(ngModel)]="lugar.nombre" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Distancia en <b>KM</b></label>
+            <input type="number" name="email" placeholder="Ingresa tu email" class="form-control"
+                [(ngModel)]="lugar.distancia" />
+        </div>
+
+        <div class="form-group">
+            <label for="mensaje">Descripcion</label>
+            <textarea name="mensaje" cols="30" rows="5" placeholder="Escribe aquí tu mensaje" class="form-control"
+                [(ngModel)]="lugar.descripcion"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="lugar.plan">
+                <option value="pagado">Pagado</option>
+                <option value="gratuito">Gratuito</option>
+            </select>
+        </div>
+
+        <input type="submit" class="btn btn-primary btn-block" value="Guardar" (click)="guardarLugar()" />
+    </div>
+
+</div>
