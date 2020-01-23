@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { LugaresComponent } from './lugares/lugares.component';
-import { DetalleComponent } from './detalle/detalle.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from 'src/routes/routes';
 import { ContactoComponent } from './contacto/contacto.component';
@@ -22,7 +20,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     ResaltarDirective,
     ContarClicksDirective,
     LugaresComponent,
-    DetalleComponent,
     ContactoComponent,
     CrearLugarComponent,
   ],
