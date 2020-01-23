@@ -18,16 +18,21 @@ export class LugaresService {
   constructor(private afDB: AngularFirestore ) { }
 
   public getLugares(){
-    return this.lugares
+    return this.afDB.collection(this.LUGARES_COLLECTION).valueChanges()
   }
 
-  public buscarLugar(id:number){
-    return this.lugares.filter((lugar: any) => lugar.id == id)[0] || null
+  public buscarLugar(id: string){
+    return this.afDB.doc(`${this.LUGARES_COLLECTION}/${id}`).valueChanges()
   }
 
   public guardarLugar( lugar: any ){
+    lugar.id = this.afDB.createId()
     console.log(lugar)
-    this.afDB.collection(this.LUGARES_COLLECTION).add(lugar)
+    this.afDB.collection(this.LUGARES_COLLECTION).doc(lugar.id).set(lugar)
+  }
+
+  public editarLugar( lugar: any ) {
+    this.afDB.collection(this.LUGARES_COLLECTION).doc(lugar.id).set(lugar)
   }
 
 }

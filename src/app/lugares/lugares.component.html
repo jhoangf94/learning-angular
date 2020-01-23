@@ -80,9 +80,9 @@
   <div class="row">
     <div class="col-md-8">
       <h4>Lugares</h4>
-      <a routerLink="/nuevo-lugar" class="btn btn-primary">Nuevo Lugar</a><br />
-      <ul class="list-group">
-        <a *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" [queryParams]="{action: 'view'}">
+      <a routerLink="/nuevo-lugar/new" class="btn btn-primary">Nuevo Lugar</a><br />
+      <ul class="list-group mt-4">
+        <a *ngFor="let lugar of lugares" routerLink="/nuevo-lugar/{{lugar.id}}">
           <li class="list-group-item">
             {{ lugar.nombre }}
           </li>

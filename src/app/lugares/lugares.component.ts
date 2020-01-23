@@ -11,7 +11,8 @@ export class LugaresComponent {
   lugares: any
 
   constructor( lugaresService: LugaresService) {
-    this.lugares = lugaresService.getLugares()
+    lugaresService.getLugares()
+      .subscribe( (lugares) => this.lugares = lugares)
   }
 
 }
