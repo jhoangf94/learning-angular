@@ -78,15 +78,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <h4>Lugares</h4>
       <a routerLink="/nuevo-lugar/new" class="btn btn-primary">Nuevo Lugar</a><br />
       <ul class="list-group mt-4">
-        <a *ngFor="let lugar of lugares" routerLink="/nuevo-lugar/{{lugar.id}}">
-          <li class="list-group-item">
-            {{ lugar.nombre }}
-          </li>
-        </a>
+        <li class="list-group-item" *ngFor="let lugar of lugares">
+        <a routerLink="/nuevo-lugar/{{lugar.id}}"><h3>{{ lugar.nombre }}</h3></a>
+          <br>
+          <p [innerHTML]=" lugar.descripcion | linkyfystr "></p>
+        </li>
       </ul>
     </div>
   </div>

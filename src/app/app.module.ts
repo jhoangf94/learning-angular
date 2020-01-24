@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { CrearLugarComponent } from './lugares/crear-lugar/crear-lugar.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { LinkyfyPipe } from './pipes/linkyfystr.pipe';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     LugaresComponent,
     ContactoComponent,
     CrearLugarComponent,
+    LinkyfyPipe
   ],
   imports: [
     BrowserModule,
